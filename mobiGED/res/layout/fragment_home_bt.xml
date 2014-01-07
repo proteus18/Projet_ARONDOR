@@ -1,0 +1,42 @@
+<com.example.mobiged.util.DashboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1" >
+
+    <Button
+        android:id="@+id/btn_file"
+        style="@style/MainButton"
+        android:drawableTop="@drawable/bt_main_file"
+        android:text="@string/parcourir" />
+
+    <Button
+        android:id="@+id/btn_scan"
+        style="@style/MainButton"
+        android:drawableTop="@drawable/bt_main_scan"
+        android:text="@string/scan" />
+
+    <Button
+        android:id="@+id/btn_contact"
+        style="@style/MainButton"
+        android:drawableTop="@drawable/bt_main_contact"
+        android:text="@string/contacts" />
+
+    <Button
+        android:id="@+id/btn_setting"
+        style="@style/MainButton"
+        android:drawableTop="@drawable/bt_main_setting"
+        android:text="@string/dashboard" />
+
+    <Button
+        android:id="@+id/btn_actu"
+        style="@style/MainButton"
+        android:drawableTop="@drawable/bt_main_news"
+        android:text="@string/actu" />
+
+    <Button
+        android:id="@+id/btn_search"
+        style="@style/MainButton"
+        android:drawableTop="@drawable/bt_main_search"
+        android:text="@string/recherche" />
+
+</com.example.mobiged.util.DashboardLayout>

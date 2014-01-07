@@ -1,0 +1,122 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background" >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            
+            
+            <ImageView
+                android:id="@+id/img_header"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:adjustViewBounds="true"
+                android:baselineAlignBottom="true"
+                android:paddingBottom="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/header" />
+            
+            <!-- Full Name Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="@string/nom"
+                android:textColor="#372c24" />
+
+            <EditText
+                android:id="@+id/reg_nom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true" />
+            
+            
+            <!-- First Name Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/prenom"
+                android:textColor="#372c24" />
+
+            <EditText
+                android:id="@+id/reg_prenom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true" />
+            
+            <!-- Email Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:textColor="#372c24" />
+
+            <EditText
+                android:id="@+id/reg_email"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true" />
+            <!-- Password Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mpd"
+                android:textColor="#372c24" />
+
+            <EditText
+                android:id="@+id/reg_mdp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:password="true"
+                android:singleLine="true" />
+            <!-- Register Button -->
+
+            <Button
+                android:id="@+id/btnInscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bt_orange"
+                android:paddingTop="10dp"
+                android:text="@string/create_account"
+                android:textColor="#fffff0" />
+
+            <TextView
+                android:id="@+id/new_account"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dip"
+                android:layout_marginTop="40dip"
+                android:gravity="center"
+                android:text="@string/deja_inscrit"
+                android:textColor="#025f7c"
+                android:textSize="15dip" />
+        </LinearLayout>
+        <!-- Registration Form Ends -->
+
+    </RelativeLayout>
+
+</ScrollView>

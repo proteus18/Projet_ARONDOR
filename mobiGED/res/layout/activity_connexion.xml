@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+   <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background" >
+
+        
+
+
+        <!-- Login Form -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- Email Label -->
+
+            <ImageView
+                android:id="@+id/img_temp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:adjustViewBounds="true"
+                android:baselineAlignBottom="true"
+                android:paddingBottom="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/header" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="@string/email"
+                android:textColor="#372c24"
+                android:padding="10dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="5dip"
+                android:singleLine="true"
+                android:textAllCaps="true"
+                android:padding="10dp" />
+
+            <!-- Password Label -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mpd"
+                android:textColor="#372c24"
+                android:padding="10dp" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:password="true"
+                android:singleLine="true"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bt_orange"
+                android:paddingTop="10dp"
+                android:text="@string/connexion"
+                android:textColor="#fffff0" />
+
+            <TextView
+                android:id="@+id/link_to_register"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dip"
+                android:gravity="center"
+                android:text="@string/pas_inscrit"
+                android:textColor="#0b84aa"
+                android:textSize="14dip" />
+            
+               <ImageView
+                   android:id="@+id/img_footer"
+                   android:layout_width="match_parent"
+                   android:layout_height="133dp"
+                   android:layout_alignParentBottom="true"
+                   android:layout_alignParentLeft="true"
+                   android:adjustViewBounds="true"
+                   android:baselineAlignBottom="true"
+                   android:cropToPadding="false"
+                   android:scaleType="centerCrop"
+                   android:src="@drawable/footer" />
+            
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

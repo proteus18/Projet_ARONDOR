@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical" >
+
+    <include layout="@layout/fragment_home_bt" />
+
+    <ImageView
+        android:id="@+id/img_footer"
+        android:layout_width="match_parent"
+        android:layout_height="133dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:adjustViewBounds="true"
+        android:baselineAlignBottom="true"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        android:src="@drawable/footer" />
+
+</LinearLayout>

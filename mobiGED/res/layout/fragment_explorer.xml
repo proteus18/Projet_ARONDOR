@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical" >
+    
+    
+
+    <ListView
+        android:id="@+id/list_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="4.0sp"       
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:layout_marginTop="50dp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/header" />
+    
+    <TextView
+        android:id="@+id/current_file"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:text="kikou"/>
+    
+    <ImageView
+        android:id="@+id/footer_explorer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/footer_long"
+        android:visibility="invisible" />
+    
+</RelativeLayout>
