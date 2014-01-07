@@ -32,7 +32,7 @@ public class Camera extends Activity {
 	Button valid;
 	Button rotate_r;
 	Button rotate_l;
-
+ 
 	// ImageView
 	ImageView imgPreview;
 
