@@ -23,6 +23,7 @@ import com.example.mobiged.Camera;
 import com.example.mobiged.ExplorerFragment;
 import com.example.mobiged.R;
 import com.example.mobiged.drive.SplashActivity;
+import com.example.mobiged.drive.HomeActivity;
 import com.example.mobiged.util.CustomDialog;
 
 public class HomeFragment extends Fragment implements AnimationListener {

@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.mobiged.Connexion;
 import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.UserRecoverableAuthException;
@@ -34,10 +35,10 @@ public abstract class AbstractGetFileTask extends AsyncTask<Void, Void, Void> {
 		GOOGLE_FILE_DATA = gOOGLE_FILE_DATA;
 	}
 
-	AbstractGetFileTask(SplashActivity activity, String titre, String scope) {
+	AbstractGetFileTask(SplashActivity activity, String mail, String scope) {
 		this.mActivity = activity;
 		this.mScope = scope;
-		this.mTitreFile = titre;
+		this.mEmail = mail;
 
 	}
 
@@ -83,8 +84,9 @@ public abstract class AbstractGetFileTask extends AsyncTask<Void, Void, Void> {
 	 */
 	private void fetchFileFromProfileServer() throws IOException, JSONException {
 		String token;
-			token = getToken(mActivity, mEmail, mScope);
-			if (token != ""){
+			token = Connexion.getTOKEN();
+			System.out.println("TOKEN ABSTRACT : " + token);
+			if (token != "" || token != null){
 				URL url = new URL("https://www.googleapis.com/drive/v2/files?access_token="+ token);
 				HttpURLConnection con = (HttpURLConnection) url.openConnection();
 				int sc = con.getResponseCode();
@@ -115,7 +117,7 @@ public abstract class AbstractGetFileTask extends AsyncTask<Void, Void, Void> {
 	public String getToken(SplashActivity splAct, String mail, String scope){
 		String token="";
 		try {
-			token = GoogleAuthUtil.getToken(splAct.getApplicationContext(), "laurent.cogotti@gmail.com", scope);
+			token = GoogleAuthUtil.getToken(splAct.getApplicationContext(), mail, scope);
 		} catch (UserRecoverableAuthException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

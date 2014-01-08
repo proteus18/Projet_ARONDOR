@@ -7,5 +7,7 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.google.gdt.eclipse.managedapis.MANAGED_API_CONTAINER/drive-v2r111lv1.16.0-rc"/>
 	<classpathentry kind="lib" path="C:/Users/Lolo/Downloads/adt-bundle-windows-x86_64-20131030/adt-bundle-windows-x86_64-20131030/sdk/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lolo/Downloads/lib/jackson-core-asl-1.8.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Lolo/Downloads/lib/jackson-mapper-asl-1.8.5.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

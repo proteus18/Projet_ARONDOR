@@ -27,17 +27,10 @@ public class HomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home_drive);
 		
-		System.out.println("Mail : " + textEmail);
 		textViewName = (TextView) findViewById(R.id.textViewNameValue);
 		textViewEmail = (TextView) findViewById(R.id.textViewEmailValue);
 		viewListTitres = (ListView)findViewById(R.id.listView1);
 		
-		/**
-		 * get user email using intent
-		 */
-		Intent intent = getIntent();
-		textEmail = intent.getStringExtra("email_id");
-		textViewEmail.setText(textEmail);
 
 		/**
 		 * get user data from google account

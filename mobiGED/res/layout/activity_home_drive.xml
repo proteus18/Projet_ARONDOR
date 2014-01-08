@@ -55,14 +55,6 @@
         android:text="Email:"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/textViewGenderValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textViewNameValue"
-        android:text="Gender:"
-        android:textSize="18sp" />
-
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
