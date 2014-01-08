@@ -44,6 +44,7 @@ public class Connexion extends Activity implements AnimationListener {
 
 	Button connexion;
 	TextView inscription;
+	//
 
 	Animation header_up;
 	Animation header_down;
