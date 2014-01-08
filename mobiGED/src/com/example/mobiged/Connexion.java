@@ -1,8 +1,6 @@
 package com.example.mobiged;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
@@ -21,8 +19,6 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -60,34 +56,9 @@ public class Connexion extends Activity implements AnimationListener {
 	static final int REQUEST_ACCOUNT_PICKER = 3;
 	static final int CAPTURE_IMAGE = 4;
 
-	private static Uri fileUri;
-	private static Drive service;
-	final private List<String> SCOPES = Arrays.asList(new String[] {
-			"https://www.googleapis.com/auth/plus.login",
-			"https://www.googleapis.com/auth/drive" });
-	private static GoogleAccountCredential mCredential;
+	
 
-	// GETTERS ET SETTERS
-
-	public static Uri getFileUri() {
-		return fileUri;
-	}
-
-	public static Drive getService() {
-		return service;
-	}
-
-	public static GoogleAccountCredential getmCredential() {
-		return mCredential;
-	}
-
-	public static void setService(Drive service) {
-		Connexion.service = service;
-	}
-
-	public void setmCredential(GoogleAccountCredential mCredential) {
-		Connexion.mCredential = mCredential;
-	}
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -122,9 +93,9 @@ public class Connexion extends Activity implements AnimationListener {
 			@Override
 			public void onClick(View v) {
 				
-				mCredential = GoogleAccountCredential.usingOAuth2(
-						getApplicationContext(), SCOPES);
-				startActivityForResult(mCredential.newChooseAccountIntent(),
+				Acces.setmCredential(GoogleAccountCredential.usingOAuth2(
+						getApplicationContext(), Acces.getSCOPES()));
+				startActivityForResult(Acces.getmCredential().newChooseAccountIntent(),
 						REQUEST_ACCOUNT_PICKER);
 
 			}
@@ -154,10 +125,10 @@ public class Connexion extends Activity implements AnimationListener {
 			String accountName = data
 					.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
 			if (accountName != null) {
-				mCredential.setSelectedAccountName(accountName);
-				setService(new Drive.Builder(
+				Acces.getmCredential().setSelectedAccountName(accountName);
+				Acces.setService(new Drive.Builder(
 						AndroidHttp.newCompatibleTransport(),
-						new GsonFactory(), mCredential).setApplicationName(
+						new GsonFactory(), Acces.getmCredential()).setApplicationName(
 						"GDive").build());
 
 			}
@@ -165,7 +136,7 @@ public class Connexion extends Activity implements AnimationListener {
 			break;
 		case REQUEST_AUTHORIZATION:
 			if (resultCode != Activity.RESULT_OK) {
-				startActivityForResult(mCredential.newChooseAccountIntent(),
+				startActivityForResult(Acces.getmCredential().newChooseAccountIntent(),
 						REQUEST_ACCOUNT_PICKER);
 			}
 			break;
@@ -220,7 +191,7 @@ public class Connexion extends Activity implements AnimationListener {
 			System.out.println("lance token");
 			final String token = GoogleAuthUtil.getToken(
 					getApplicationContext(),
-					mCredential.getSelectedAccountName(), "oauth2:"
+					Acces.getmCredential().getSelectedAccountName(), "oauth2:"
 							+ DriveScopes.DRIVE);
 			System.out.println("token : " + token);
 			return;
