@@ -108,7 +108,7 @@ public class Camera extends Activity {
 
 			}
 		});
-
+//
 		rotate_r.setOnClickListener(new OnClickListener() {
 
 			@Override
