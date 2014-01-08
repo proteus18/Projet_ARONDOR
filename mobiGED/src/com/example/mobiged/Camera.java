@@ -63,7 +63,7 @@ public class Camera extends Activity {
 
 		imgPreview = (ImageView) findViewById(R.id.imgPreview);
 
-		// Button
+		// Buttonffff
 		exit = (Button) findViewById(R.id.bt_photo_exit);
 		crop = (Button) findViewById(R.id.bt_photo_crop);
 		valid = (Button) findViewById(R.id.bt_photo_valid);
