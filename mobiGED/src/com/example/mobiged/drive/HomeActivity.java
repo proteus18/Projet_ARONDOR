@@ -7,7 +7,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -15,12 +14,32 @@ import android.widget.TextView;
 
 import com.example.mobiged.R;
 
+
+/**
+ * 
+ */
 public class HomeActivity extends Activity {
 	private TextView textViewName, textViewEmail;
 	private static String textName, textEmail;
 	private ListView viewListTitres;
 	private ArrayList<JSONObject> ListeDoc;
 	private String[] listeTitres;
+	
+	public static String getTextName() {
+		return textName;
+	}
+
+	public static void setTextName(String textName) {
+		HomeActivity.textName = textName;
+	}
+
+	public static String getTextEmail() {
+		return textEmail;
+	}
+
+	public static void setTextEmail(String textEmail) {
+		HomeActivity.textEmail = textEmail;
+	}
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -70,27 +89,6 @@ public class HomeActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
-	
-	public static String getTextName() {
-		return textName;
-	}
 
-
-
-	public static void setTextName(String textName) {
-		HomeActivity.textName = textName;
-	}
-
-
-
-	public static String getTextEmail() {
-		return textEmail;
-	}
-
-
-
-	public static void setTextEmail(String textEmail) {
-		HomeActivity.textEmail = textEmail;
-	}
 	
 }
