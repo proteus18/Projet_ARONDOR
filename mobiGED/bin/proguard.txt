@@ -1,0 +1,39 @@
+# view res/layout/activity_home.xml #generated:1
+-keep class android.support.v4.widget.DrawerLayout { <init>(...); }
+
+# view AndroidManifest.xml #generated:76
+-keep class ccom.example.mobiged.drive.YourBroadCastReceiverName { <init>(...); }
+
+# view AndroidManifest.xml #generated:57
+-keep class com.example.mobiged.Camera { <init>(...); }
+
+# view AndroidManifest.xml #generated:53
+-keep class com.example.mobiged.Connexion { <init>(...); }
+
+# view AndroidManifest.xml #generated:51
+-keep class com.example.mobiged.Fragments.CamFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:45
+-keep class com.example.mobiged.Fragments.HomeFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:49
+-keep class com.example.mobiged.Fragments.SearchFragment { <init>(...); }
+
+# view AndroidManifest.xml #generated:25
+-keep class com.example.mobiged.Home { <init>(...); }
+
+# view AndroidManifest.xml #generated:41
+-keep class com.example.mobiged.Inscription { <init>(...); }
+
+# view AndroidManifest.xml #generated:74
+-keep class com.example.mobiged.drive.HomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:81
+-keep class com.example.mobiged.drive.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:65
+-keep class com.example.mobiged.drive.SplashActivity { <init>(...); }
+
+# view res/layout/fragment_home_bt.xml #generated:1
+-keep class com.example.mobiged.util.DashboardLayout { <init>(...); }
+

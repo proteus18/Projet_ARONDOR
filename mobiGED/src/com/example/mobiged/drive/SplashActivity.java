@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.driveFilesExtract.R;
+import com.example.mobiged.R;
 import com.google.android.gms.auth.GoogleAuthUtil;
 
 

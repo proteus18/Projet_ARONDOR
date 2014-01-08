@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.driveFilesExtract.R;
+import com.example.mobiged.R;
 
 public class HomeActivity extends Activity {
 	private TextView textViewName, textViewEmail;
@@ -25,7 +25,7 @@ public class HomeActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_home);
+		setContentView(R.layout.activity_home_drive);
 		
 		System.out.println("Mail : " + textEmail);
 		textViewName = (TextView) findViewById(R.id.textViewNameValue);

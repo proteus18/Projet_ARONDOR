@@ -10,6 +10,12 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.NETWORK" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
 
     <application
         android:allowBackup="true"
@@ -51,6 +57,40 @@
         <activity
             android:name="com.example.mobiged.Camera" >
         </activity>
+        
+<!--         <meta-data -->
+<!--             android:name="com.google.android.gms.version" -->
+<!--             android:value="@integer/google_play_services_version" /> -->
+
+        <activity
+            android:name="com.example.mobiged.drive.SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.mobiged.drive.HomeActivity" />
+
+        <receiver
+            android:name="ccom.example.mobiged.drive.YourBroadCastReceiverName"
+            android:exported="true" >
+        </receiver>
+
+        <activity
+            android:name="com.example.mobiged.drive.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        
+        
+        
     </application>
 
 </manifest>
