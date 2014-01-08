@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import com.example.mobiged.Camera;
 import com.example.mobiged.ExplorerFragment;
 import com.example.mobiged.R;
+import com.example.mobiged.drive.SplashActivity;
 import com.example.mobiged.util.CustomDialog;
 
 public class HomeFragment extends Fragment implements AnimationListener {
@@ -135,14 +136,15 @@ public class HomeFragment extends Fragment implements AnimationListener {
 			}
 			
 		});
-		
+		 
 		
 		//listener contact fonction
 		bt_contact.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				final Intent i = new Intent(layout.getContext(), SplashActivity.class);
+				startActivity(i);
 				
 			}
 		});
