@@ -62,7 +62,7 @@ public class Camera extends Activity {
 		actionBar.hide();
 
 		imgPreview = (ImageView) findViewById(R.id.imgPreview);
-
+ 
 		// Button
 		exit = (Button) findViewById(R.id.bt_photo_exit);
 		crop = (Button) findViewById(R.id.bt_photo_crop);
