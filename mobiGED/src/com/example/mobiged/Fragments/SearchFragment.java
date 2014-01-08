@@ -55,8 +55,6 @@ public class SearchFragment extends Fragment {
 	// Search EditText
 	EditText inputSearch;
 
-	// ArrayList for Listview
-	ArrayList<HashMap<String, String>> productList;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
