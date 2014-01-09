@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.mobiged.Connexion;
+import com.example.mobiged.Acces;
 import com.example.mobiged.R;
 import com.google.android.gms.auth.GoogleAuthUtil;
 
@@ -46,7 +46,7 @@ public class SplashActivity extends Activity {
 		if (isNetworkAvailable() == true) {
 			String[] accountarrs = getAccountNames();
 			if (accountarrs.length > 0) {
-				getTaskDrive(SplashActivity.this, Connexion.getmCredential().getSelectedAccountName(), SCOPE_DRIVE).execute();
+				getTaskDrive(SplashActivity.this, Acces.getmCredential().getSelectedAccountName(), SCOPE_DRIVE).execute();
 			} else {
 				Toast.makeText(SplashActivity.this, "No Google Account Sync!", Toast.LENGTH_SHORT).show();
 			}
