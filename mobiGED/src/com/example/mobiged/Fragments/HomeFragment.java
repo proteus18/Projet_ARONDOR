@@ -21,7 +21,6 @@ import android.widget.LinearLayout;
 
 import com.example.mobiged.Acces;
 import com.example.mobiged.Camera;
-import com.example.mobiged.Connexion;
 import com.example.mobiged.DialogFrag;
 import com.example.mobiged.ExplorerFragment;
 import com.example.mobiged.R;
@@ -147,7 +146,7 @@ public class HomeFragment extends Fragment implements AnimationListener {
 			
 			@Override
 			public void onClick(View v) {
-			    if(Acces.getmCredential().getSelectedAccountName() != null || Acces.getmCredential().getSelectedAccountName() != ""){
+			    if(Acces.getmCredential() != null ){
 					final Intent i = new Intent(layout.getContext(), SplashActivity.class);
 					startActivity(i);
 				} else {
