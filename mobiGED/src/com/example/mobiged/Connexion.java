@@ -40,7 +40,7 @@ public class Connexion extends Activity implements AnimationListener {
 
 	Button connexion;
 	TextView inscription;
-	////
+	// //
 
 	Animation header_up;
 	Animation header_down;
@@ -56,9 +56,15 @@ public class Connexion extends Activity implements AnimationListener {
 	static final int REQUEST_ACCOUNT_PICKER = 3;
 	static final int CAPTURE_IMAGE = 4;
 
-	
+	private static String TOKEN;
 
-	
+	public static String getTOKEN() {
+		return TOKEN;
+	}
+
+	public static void setTOKEN(String tOKEN) {
+		TOKEN = tOKEN;
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -92,11 +98,11 @@ public class Connexion extends Activity implements AnimationListener {
 
 			@Override
 			public void onClick(View v) {
-				
+
 				Acces.setmCredential(GoogleAccountCredential.usingOAuth2(
 						getApplicationContext(), Acces.getSCOPES()));
-				startActivityForResult(Acces.getmCredential().newChooseAccountIntent(),
-						REQUEST_ACCOUNT_PICKER);
+				startActivityForResult(Acces.getmCredential()
+						.newChooseAccountIntent(), REQUEST_ACCOUNT_PICKER);
 
 			}
 		});
@@ -126,18 +132,17 @@ public class Connexion extends Activity implements AnimationListener {
 					.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
 			if (accountName != null) {
 				Acces.getmCredential().setSelectedAccountName(accountName);
-				Acces.setService(new Drive.Builder(
-						AndroidHttp.newCompatibleTransport(),
-						new GsonFactory(), Acces.getmCredential()).setApplicationName(
-						"GDive").build());
+				Acces.setService(new Drive.Builder(AndroidHttp
+						.newCompatibleTransport(), new GsonFactory(), Acces
+						.getmCredential()).setApplicationName("GDive").build());
 
 			}
 			getAndUseAuthTokenInAsyncTask();
 			break;
 		case REQUEST_AUTHORIZATION:
 			if (resultCode != Activity.RESULT_OK) {
-				startActivityForResult(Acces.getmCredential().newChooseAccountIntent(),
-						REQUEST_ACCOUNT_PICKER);
+				startActivityForResult(Acces.getmCredential()
+						.newChooseAccountIntent(), REQUEST_ACCOUNT_PICKER);
 			}
 			break;
 		case MY_ACTIVITYS_AUTH_REQUEST_CODE:
@@ -190,10 +195,10 @@ public class Connexion extends Activity implements AnimationListener {
 		try {
 			System.out.println("lance token");
 			final String token = GoogleAuthUtil.getToken(
-					getApplicationContext(),
-					Acces.getmCredential().getSelectedAccountName(), "oauth2:"
+					getApplicationContext(), Acces.getmCredential()
+							.getSelectedAccountName(), "oauth2:"
 							+ DriveScopes.DRIVE);
-			System.out.println("token : " + token);
+			setTOKEN(token);
 			return;
 		} catch (GooglePlayServicesAvailabilityException playEx) {
 			Dialog alert = GooglePlayServicesUtil.getErrorDialog(
