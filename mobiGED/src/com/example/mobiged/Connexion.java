@@ -193,7 +193,6 @@ public class Connexion extends Activity implements AnimationListener {
 
 	void getAndUseAuthTokenBlocking() {
 		try {
-			System.out.println("lance token");
 			final String token = GoogleAuthUtil.getToken(
 					getApplicationContext(), Acces.getmCredential()
 							.getSelectedAccountName(), "oauth2:"

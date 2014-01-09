@@ -19,9 +19,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.mobiged.Acces;
 import com.example.mobiged.Camera;
+import com.example.mobiged.Connexion;
+import com.example.mobiged.DialogFrag;
 import com.example.mobiged.ExplorerFragment;
 import com.example.mobiged.R;
+import com.example.mobiged.VarStat;
 import com.example.mobiged.drive.SplashActivity;
 import com.example.mobiged.util.CustomDialog;
 
@@ -143,9 +147,14 @@ public class HomeFragment extends Fragment implements AnimationListener {
 			
 			@Override
 			public void onClick(View v) {
-				final Intent i = new Intent(layout.getContext(), SplashActivity.class);
-				startActivity(i);
-				
+			    if(Acces.getmCredential().getSelectedAccountName() != null || Acces.getmCredential().getSelectedAccountName() != ""){
+					final Intent i = new Intent(layout.getContext(), SplashActivity.class);
+					startActivity(i);
+				} else {
+					VarStat.setMessageToBox(getString(R.string.connectez_vous));
+					DialogFrag diag = new DialogFrag();
+					diag.show(getFragmentManager(), "TAG");
+				}
 			}
 		});
 		

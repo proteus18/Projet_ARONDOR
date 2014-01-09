@@ -293,8 +293,8 @@ containing a value of this type.
     }
     public static final class id {
         public static final int SlidingDrawer=0x7f060006;
-        public static final int action_settings=0x7f060043;
-        public static final int author_document=0x7f060041;
+        public static final int action_settings=0x7f060042;
+        public static final int author_document=0x7f060040;
         public static final int bt_photo_crop=0x7f06000a;
         public static final int bt_photo_exit=0x7f060009;
         public static final int bt_photo_rotate_l=0x7f06000d;
@@ -302,48 +302,47 @@ containing a value of this type.
         public static final int bt_photo_valid=0x7f06000b;
         public static final int btnInscription=0x7f060021;
         public static final int btnLogin=0x7f06000f;
-        public static final int btn_actu=0x7f060034;
-        public static final int btn_contact=0x7f060032;
-        public static final int btn_file=0x7f060030;
-        public static final int btn_scan=0x7f060031;
-        public static final int btn_search=0x7f060035;
-        public static final int btn_setting=0x7f060033;
-        public static final int button1=0x7f060024;
+        public static final int btn_actu=0x7f060033;
+        public static final int btn_contact=0x7f060031;
+        public static final int btn_file=0x7f06002f;
+        public static final int btn_scan=0x7f060030;
+        public static final int btn_search=0x7f060034;
+        public static final int btn_setting=0x7f060032;
         public static final int contentLayout=0x7f060007;
-        public static final int counter=0x7f06003b;
-        public static final int current_file=0x7f06002d;
-        public static final int custom_dialog_bt_no=0x7f06002b;
-        public static final int custom_dialog_bt_ok=0x7f060029;
-        public static final int custom_dialog_bt_yes=0x7f06002a;
-        public static final int custom_dialog_img=0x7f060026;
-        public static final int custom_dialog_text=0x7f060028;
-        public static final int custom_dialog_title=0x7f060027;
-        public static final int date_document=0x7f060042;
+        public static final int counter=0x7f06003a;
+        public static final int current_file=0x7f06002c;
+        public static final int custom_dialog_bt_no=0x7f06002a;
+        public static final int custom_dialog_bt_ok=0x7f060028;
+        public static final int custom_dialog_bt_yes=0x7f060029;
+        public static final int custom_dialog_img=0x7f060025;
+        public static final int custom_dialog_text=0x7f060027;
+        public static final int custom_dialog_title=0x7f060026;
+        public static final int date_document=0x7f060041;
         public static final int drawer_layout=0x7f060012;
-        public static final int filter_spinner=0x7f060038;
-        public static final int footer_explorer=0x7f06002e;
+        public static final int filter_spinner=0x7f060037;
+        public static final int footer_explorer=0x7f06002d;
         public static final int frame_container=0x7f060013;
-        public static final int home_root=0x7f06002f;
+        public static final int home_root=0x7f06002e;
         public static final int hybrid=0x7f060004;
-        public static final int icon=0x7f060039;
+        public static final int icon=0x7f060038;
         public static final int imageView1=0x7f06001a;
-        public static final int image_type_document=0x7f06003f;
+        public static final int image_type_document=0x7f06003e;
         public static final int imgPreview=0x7f060005;
         public static final int img_footer=0x7f060011;
         public static final int img_header=0x7f06001c;
         public static final int img_temp=0x7f06000e;
-        public static final int inputSearch=0x7f060037;
+        public static final int inputSearch=0x7f060036;
         public static final int link_to_register=0x7f060010;
         public static final int listView1=0x7f06001b;
-        public static final int list_file=0x7f06002c;
-        public static final int list_file_icon=0x7f06003c;
-        public static final int list_file_name=0x7f06003d;
+        public static final int list_file=0x7f06002b;
+        public static final int list_file_icon=0x7f06003b;
+        public static final int list_file_name=0x7f06003c;
         public static final int list_slidermenu=0x7f060014;
-        public static final int list_view=0x7f060036;
+        public static final int list_view=0x7f060035;
         public static final int new_account=0x7f060022;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
-        public static final int progressBar1=0x7f060025;
+        public static final int progressBar1=0x7f060024;
         public static final int reg_email=0x7f06001f;
         public static final int reg_mdp=0x7f060020;
         public static final int reg_nom=0x7f06001d;
@@ -357,9 +356,9 @@ containing a value of this type.
         public static final int textViewNameLabel=0x7f060016;
         public static final int textViewNameValue=0x7f060017;
         public static final int textViewTitle=0x7f060015;
-        public static final int thumbnail=0x7f06003e;
-        public static final int title=0x7f06003a;
-        public static final int title_document=0x7f060040;
+        public static final int thumbnail=0x7f06003d;
+        public static final int title=0x7f060039;
+        public static final int title_document=0x7f06003f;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
@@ -370,17 +369,16 @@ containing a value of this type.
         public static final int activity_home=0x7f030002;
         public static final int activity_home_drive=0x7f030003;
         public static final int activity_inscription=0x7f030004;
-        public static final int activity_main=0x7f030005;
-        public static final int activity_splash=0x7f030006;
-        public static final int bt=0x7f030007;
-        public static final int dialog_custom_information=0x7f030008;
-        public static final int fragment_explorer=0x7f030009;
-        public static final int fragment_home=0x7f03000a;
-        public static final int fragment_home_bt=0x7f03000b;
-        public static final int fragment_search=0x7f03000c;
-        public static final int list_drawer_item=0x7f03000d;
-        public static final int list_item_file=0x7f03000e;
-        public static final int list_item_search=0x7f03000f;
+        public static final int activity_splash=0x7f030005;
+        public static final int bt=0x7f030006;
+        public static final int dialog_custom_information=0x7f030007;
+        public static final int fragment_explorer=0x7f030008;
+        public static final int fragment_home=0x7f030009;
+        public static final int fragment_home_bt=0x7f03000a;
+        public static final int fragment_search=0x7f03000b;
+        public static final int list_drawer_item=0x7f03000c;
+        public static final int list_item_file=0x7f03000d;
+        public static final int list_item_search=0x7f03000e;
     }
     public static final class menu {
         public static final int camera=0x7f0c0000;
@@ -390,6 +388,9 @@ containing a value of this type.
         public static final int main_page=0x7f0c0004;
     }
     public static final class string {
+        /**    DialogBoxes    
+         */
+        public static final int OK=0x7f07003f;
         public static final int action_settings=0x7f07001b;
         public static final int actu=0x7f07002d;
         public static final int app_name=0x7f07001a;
@@ -488,6 +489,7 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f070013;
+        public static final int connectez_vous=0x7f070040;
         public static final int connexion=0x7f070021;
         public static final int contacts=0x7f07002b;
         public static final int create_account=0x7f070026;
