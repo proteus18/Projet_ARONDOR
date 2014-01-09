@@ -1,18 +1,13 @@
 package com.example.mobiged.Fragments;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,13 +21,9 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.example.mobiged.R;
-import com.example.mobiged.R.array;
-import com.example.mobiged.R.id;
-import com.example.mobiged.R.layout;
 import com.example.mobiged.adapter.DocumentItemAdapter;
 import com.example.mobiged.model.DocumentItem;
 import com.example.mobiged.test.TestDataBase;
-import com.example.mobiged.util.FragmentCustom;
 
 public class SearchFragment extends Fragment {
   

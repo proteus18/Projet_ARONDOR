@@ -154,9 +154,9 @@ public class Camera extends Activity {
 	}
 
 	private void saveFileToDrive() {
-
-		DownloadPicture up = new DownloadPicture(this);
-		up.execute();
+//
+//		DownloadPicture up = new DownloadPicture(this);
+//		up.execute();
 	}
 
 	@Override
@@ -249,7 +249,7 @@ public class Camera extends Activity {
 
 	public void crop() {
 
-		imgPreview.setImageBitmap(currentBitmap.createScaledBitmap(
+		imgPreview.setImageBitmap(Bitmap.createScaledBitmap(
 				currentBitmap, 150, 150, true));
 		Intent cropIntent = new Intent("com.android.camera.action.CROP");
 		// indicate image type and Uri

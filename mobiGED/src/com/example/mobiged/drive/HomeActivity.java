@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.mobiged.Connexion;
 import com.example.mobiged.R;
 
 
@@ -49,7 +50,7 @@ public class HomeActivity extends Activity {
 		textViewName = (TextView) findViewById(R.id.textViewNameValue);
 		textViewEmail = (TextView) findViewById(R.id.textViewEmailValue);
 		viewListTitres = (ListView)findViewById(R.id.listView1);
-		
+		textViewEmail.setText(Connexion.getmCredential().getSelectedAccountName());
 
 		/**
 		 * get user data from google account

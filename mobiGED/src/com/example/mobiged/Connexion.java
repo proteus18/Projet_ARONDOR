@@ -1,18 +1,8 @@
 package com.example.mobiged;
 
 import java.io.IOException;
-
-import com.google.android.gms.auth.GoogleAuthException;
-import com.google.android.gms.auth.GoogleAuthUtil;
-import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
-import com.google.android.gms.auth.UserRecoverableAuthException;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
-import com.google.api.client.json.gson.GsonFactory;
-import com.google.api.services.drive.Drive;
-import com.google.api.services.drive.DriveScopes;
+import java.util.Arrays;
+import java.util.List;
 
 import android.accounts.AccountManager;
 import android.app.ActionBar;
@@ -32,6 +22,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.GoogleAuthException;
+import com.google.android.gms.auth.GoogleAuthUtil;
+import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
+import com.google.android.gms.auth.UserRecoverableAuthException;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.DriveScopes;
+
 public class Connexion extends Activity implements AnimationListener {
 
 	// PARAMETRES IHM
@@ -40,7 +42,7 @@ public class Connexion extends Activity implements AnimationListener {
 
 	Button connexion;
 	TextView inscription;
-	////
+	//
 
 	Animation header_up;
 	Animation header_down;
@@ -55,10 +57,36 @@ public class Connexion extends Activity implements AnimationListener {
 	static final int REQUEST_AUTHORIZATION = 2;
 	static final int REQUEST_ACCOUNT_PICKER = 3;
 	static final int CAPTURE_IMAGE = 4;
+	private static String TOKEN;
 
-	
+	private static Uri fileUri;
+	private static Drive service;
+	final private List<String> SCOPES = Arrays.asList(new String[] {
+			"https://www.googleapis.com/auth/plus.login",
+			"https://www.googleapis.com/auth/drive" });
+	private static GoogleAccountCredential mCredential;
 
-	
+	// GETTERS ET SETTERS
+
+	public static Uri getFileUri() {
+		return fileUri;
+	}
+
+	public static Drive getService() {
+		return service;
+	}
+
+	public static GoogleAccountCredential getmCredential() {
+		return mCredential;
+	}
+
+	public static void setService(Drive service) {
+		Connexion.service = service;
+	}
+
+	public void setmCredential(GoogleAccountCredential mCredential) {
+		Connexion.mCredential = mCredential;
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,14 +116,16 @@ public class Connexion extends Activity implements AnimationListener {
 		header.startAnimation(header_up);
 		footer.startAnimation(footer_up);
 
+		
+		
 		connexion.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				
-				Acces.setmCredential(GoogleAccountCredential.usingOAuth2(
-						getApplicationContext(), Acces.getSCOPES()));
-				startActivityForResult(Acces.getmCredential().newChooseAccountIntent(),
+				mCredential = GoogleAccountCredential.usingOAuth2(
+						getApplicationContext(), SCOPES);
+				startActivityForResult(mCredential.newChooseAccountIntent(),
 						REQUEST_ACCOUNT_PICKER);
 
 			}
@@ -113,6 +143,14 @@ public class Connexion extends Activity implements AnimationListener {
 
 	}
 
+	public static String getTOKEN() {
+		return TOKEN;
+	}
+
+	public static void setTOKEN(String tOKEN) {
+		TOKEN = tOKEN;
+	}
+
 	/**
 	 * Handles the callbacks from result returning account picker and permission
 	 * requester activities.
@@ -125,10 +163,10 @@ public class Connexion extends Activity implements AnimationListener {
 			String accountName = data
 					.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
 			if (accountName != null) {
-				Acces.getmCredential().setSelectedAccountName(accountName);
-				Acces.setService(new Drive.Builder(
+				mCredential.setSelectedAccountName(accountName);
+				setService(new Drive.Builder(
 						AndroidHttp.newCompatibleTransport(),
-						new GsonFactory(), Acces.getmCredential()).setApplicationName(
+						new GsonFactory(), mCredential).setApplicationName(
 						"GDive").build());
 
 			}
@@ -136,7 +174,7 @@ public class Connexion extends Activity implements AnimationListener {
 			break;
 		case REQUEST_AUTHORIZATION:
 			if (resultCode != Activity.RESULT_OK) {
-				startActivityForResult(Acces.getmCredential().newChooseAccountIntent(),
+				startActivityForResult(mCredential.newChooseAccountIntent(),
 						REQUEST_ACCOUNT_PICKER);
 			}
 			break;
@@ -171,7 +209,6 @@ public class Connexion extends Activity implements AnimationListener {
 		int resultCode = GooglePlayServicesUtil
 				.isGooglePlayServicesAvailable(this.getApplicationContext());
 		if (resultCode == ConnectionResult.SUCCESS) {
-			System.out.println("success");
 			return true;
 		} else if (resultCode == ConnectionResult.SERVICE_MISSING
 				|| resultCode == ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED
@@ -188,12 +225,11 @@ public class Connexion extends Activity implements AnimationListener {
 
 	void getAndUseAuthTokenBlocking() {
 		try {
-			System.out.println("lance token");
 			final String token = GoogleAuthUtil.getToken(
 					getApplicationContext(),
-					Acces.getmCredential().getSelectedAccountName(), "oauth2:"
+					mCredential.getSelectedAccountName(), "oauth2:"
 							+ DriveScopes.DRIVE);
-			System.out.println("token : " + token);
+			TOKEN = token;
 			return;
 		} catch (GooglePlayServicesAvailabilityException playEx) {
 			Dialog alert = GooglePlayServicesUtil.getErrorDialog(
@@ -204,10 +240,8 @@ public class Connexion extends Activity implements AnimationListener {
 					REQUEST_AUTHORIZATION);
 
 		} catch (IOException transientEx) {
-
 			return;
 		} catch (GoogleAuthException authEx) {
-
 			return;
 		}
 	}

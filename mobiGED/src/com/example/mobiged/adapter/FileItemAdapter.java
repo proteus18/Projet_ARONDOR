@@ -2,14 +2,12 @@ package com.example.mobiged.adapter;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -104,9 +102,7 @@ public class FileItemAdapter extends BaseAdapter {
 				return R.drawable.filetype_img;
 			} else if (fileType.equalsIgnoreCase(".xls")) {
 				return R.drawable.filetype_excel;
-			} else if (fileType == null) {
-				return R.drawable.filetype_others;
-			}
+			} 
 		}
 		return R.drawable.filetype_others;
 	}

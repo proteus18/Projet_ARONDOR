@@ -2,8 +2,6 @@ package com.example.mobiged.model;
 
 import java.util.Date;
 
-import android.location.Location;
-
 public class DocumentItem {
 	
 	private int id;

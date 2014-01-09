@@ -5,8 +5,6 @@ import java.util.Date;
 
 import com.example.mobiged.model.DocumentItem;
 
-import android.util.Log;
-
 public class TestDataBase {
 
 	private ArrayList<DocumentItem> docItems;

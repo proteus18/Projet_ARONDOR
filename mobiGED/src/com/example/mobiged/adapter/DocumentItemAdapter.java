@@ -2,24 +2,19 @@ package com.example.mobiged.adapter;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import com.example.mobiged.R;
-import com.example.mobiged.R.drawable;
-import com.example.mobiged.R.id;
-import com.example.mobiged.R.layout;
-import com.example.mobiged.model.DocumentItem;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.mobiged.R;
+import com.example.mobiged.model.DocumentItem;
 
 public class DocumentItemAdapter extends BaseAdapter implements Filterable {
 

@@ -1,16 +1,15 @@
 package com.example.mobiged.util;
 
-import com.example.mobiged.R;
-
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.mobiged.R;
 
 public class CustomDialog extends Dialog implements
 		android.view.View.OnClickListener {

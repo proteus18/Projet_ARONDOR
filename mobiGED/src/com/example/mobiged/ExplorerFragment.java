@@ -30,7 +30,7 @@ public class ExplorerFragment extends Fragment implements AnimationListener{
 
 	private static final String root = "/sdcard/";
 	private static final int TEXTE_LENGHT = 30;
-	private static final int TIME_OPEN_ANIMATION = 500;
+	//private static final int TIME_OPEN_ANIMATION = 500;
 	
 	
 	//Animation
