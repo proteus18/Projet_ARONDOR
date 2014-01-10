@@ -243,5 +243,10 @@ public class Connexion extends Activity implements AnimationListener {
 		// TODO Auto-generated method stub
 
 	}
+	
+	public void onBackPressed(){
+		Intent intent = new Intent(Connexion.this, Home.class);
+		startActivity(intent);
+	}
 
 }

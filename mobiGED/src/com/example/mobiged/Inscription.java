@@ -1,7 +1,11 @@
 package com.example.mobiged; 
 
+import com.example.mobiged.R.layout;
+import com.example.mobiged.drive.SplashActivity;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 
 public class Inscription extends Activity {
@@ -18,5 +22,6 @@ public class Inscription extends Activity {
 		getMenuInflater().inflate(R.menu.inscription, menu);
 		return true;
 	}
+	
 
 }
