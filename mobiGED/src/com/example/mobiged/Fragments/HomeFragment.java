@@ -21,12 +21,13 @@ import android.widget.LinearLayout;
 
 import com.example.mobiged.Acces;
 import com.example.mobiged.Camera;
-import com.example.mobiged.DialogFrag;
 import com.example.mobiged.ExplorerFragment;
 import com.example.mobiged.R;
-import com.example.mobiged.VarStat;
 import com.example.mobiged.drive.SplashActivity;
 import com.example.mobiged.util.CustomDialog;
+
+import config.DialogFrag;
+import config.VarStat;
 
 public class HomeFragment extends Fragment implements AnimationListener {
 	

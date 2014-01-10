@@ -208,9 +208,11 @@ public class Home extends Activity {
 			break;
 		case 6:
 			fragment = new SearchFragment();
+			break;
 		case 7:
 			Intent ic = new Intent(getApplicationContext(), Connexion.class);
 			startActivity(ic);
+			break;
 
 		default:
 			break;

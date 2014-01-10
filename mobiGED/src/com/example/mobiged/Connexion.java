@@ -99,10 +99,8 @@ public class Connexion extends Activity implements AnimationListener {
 			@Override
 			public void onClick(View v) {
 
-				Acces.setmCredential(GoogleAccountCredential.usingOAuth2(
-						getApplicationContext(), Acces.getSCOPES()));
-				startActivityForResult(Acces.getmCredential()
-						.newChooseAccountIntent(), REQUEST_ACCOUNT_PICKER);
+				Acces.setmCredential(GoogleAccountCredential.usingOAuth2(getApplicationContext(), Acces.getSCOPES()));
+				startActivityForResult(Acces.getmCredential().newChooseAccountIntent(), REQUEST_ACCOUNT_PICKER);
 
 			}
 		});
@@ -154,7 +152,7 @@ public class Connexion extends Activity implements AnimationListener {
 
 	// Example of how to use AsyncTask to call blocking code on a background
 	// thread.
-	void getAndUseAuthTokenInAsyncTask() {
+	public void getAndUseAuthTokenInAsyncTask() {
 		AsyncTask<Object, Object, Object> task = new AsyncTask<Object, Object, Object>() {
 			@Override
 			protected Object doInBackground(Object... params) {
@@ -242,11 +240,6 @@ public class Connexion extends Activity implements AnimationListener {
 	public void onAnimationStart(Animation animation) {
 		// TODO Auto-generated method stub
 
-	}
-	
-	public void onBackPressed(){
-		Intent intent = new Intent(Connexion.this, Home.class);
-		startActivity(intent);
 	}
 
 }
