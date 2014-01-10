@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.example.mobiged;
+package config;
 
 import java.io.File;
 import java.io.FileOutputStream;

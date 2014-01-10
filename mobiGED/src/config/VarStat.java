@@ -1,4 +1,4 @@
-package com.example.mobiged;
+package config;
 
 /**
  * 

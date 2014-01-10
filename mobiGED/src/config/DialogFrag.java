@@ -1,6 +1,8 @@
-package com.example.mobiged;
+package config;
 
 import com.example.mobiged.R;
+import com.example.mobiged.R.string;
+
 
 import android.app.Activity;
 import android.app.AlertDialog;
